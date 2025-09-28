@@ -1,5 +1,5 @@
 # System & dependencies
-node_modules/
+E2E/Cypress/node_modules/
 *.log
 
 # Ignore artifacts

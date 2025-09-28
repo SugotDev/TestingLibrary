@@ -5,6 +5,7 @@ export default defineConfig({
     baseUrl: "https://www.saucedemo.com/",
     specPattern: "cypress/e2e/saucedemo/*.cy.{js,jsx,ts,tsx}",
     supportFile: "cypress/support/e2e.ts",
+    screenShotOnRunFailure: true,
     video: false,
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",

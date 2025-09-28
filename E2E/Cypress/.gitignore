@@ -1,3 +1,7 @@
+# System & dependencies
+node_modules/
+*.log
+
 # Ignore artifacts
 E2E/Cypress/cypress/videos/
 E2E/Cypress/cypress/screenshots/

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains a set of automated end-to-end (E2E) tests for various tools and frameworks, including Cypress, Playwright, Selenium, Postman, JMeter, k6, and NBomber. The main focus is on E2E tests implemented in Cypress for the demo application [saucedemo.com](https://www.saucedemo.com/).
+The main focus is on E2E tests implemented in Cypress for the demo application [saucedemo.com](https://www.saucedemo.com/).
 
 ## Requirements
 

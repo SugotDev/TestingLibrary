@@ -5,6 +5,7 @@ import { checkUrl, CustomUrlOptions } from "../utils/url";
 import { login, logout, LoginOptions, LogoutOptions } from "../utils/user";
 import { checkHeader, HeaderOptions } from "../utils/header";
 import { checkInventoryItem, InventoryItem } from "../utils/inventoryItem";
+import { checkCartItem, CartItem } from "../utils/cart";
 
 Cypress.Commands.add(
   "checkButton",
@@ -45,4 +46,8 @@ Cypress.Commands.add(
 
 Cypress.Commands.add("checkInventoryItem", (options: InventoryItem) => {
   return checkInventoryItem(options);
+});
+
+Cypress.Commands.add("checkCartItem", (options: CartItem) => {
+  return checkCartItem(options);
 });

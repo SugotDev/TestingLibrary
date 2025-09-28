@@ -20,6 +20,14 @@ export const login = (options: LoginOptions) => {
 
   if (assertSuccess) {
     cy.url().should("include", "/inventory.html");
+  } else {
+    cy.url().should("equal", Cypress.env("baseUrl"));
+    cy.get('[data-test="error"]')
+      .should("be.visible")
+      .should(
+        "have.text",
+        "Epic sadface: Sorry, this user has been locked out."
+      );
   }
 };
 
@@ -29,6 +37,8 @@ export const logout = (options: LogoutOptions) => {
   cy.get(menuSelector).click();
   cy.get(buttonSelector).click();
   if (assertSuccess) {
-    cy.url().should("include", "/");
+    cy.url().should("equal", Cypress.env("baseUrl"));
+  } else {
+    cy.url().should("not.equal", Cypress.env("baseUrl"));
   }
 };

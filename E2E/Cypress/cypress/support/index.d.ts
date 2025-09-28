@@ -5,6 +5,8 @@ import { InputOptions } from "../utils/input";
 import { TextOptions } from "../utils/text";
 import { CustomUrlOptions } from "../utils/url";
 import { LoginOptions, LogoutOptions } from "../utils/user";
+import { HeaderOptions } from "../utils/header";
+import { InventoryItem } from "../utils/inventoryItem";
 
 declare global {
   namespace Cypress {
@@ -51,6 +53,26 @@ declare global {
        * @example cy.logout({ menuSelector, buttonSelector, assertSuccess })
        */
       logout(options: LogoutOptions): Chainable<void>;
+
+      /**
+       * Custom command to check a header's style and optionally its logo
+       * @example cy.checkHeader(selector, { background, backgroundColor, height, logoSelector, logoAltText, text })
+       */
+      checkHeader(selector: string, options?: HeaderOptions): Chainable<void>;
+
+      /**
+       * Custom command to check an inventory item's details and optionally its button state
+       * @example cy.checkInventoryItem({ label, labelLink, price, button, image, imageLink }
+       * @param label - Object containing titleSelector, titleText, descriptionSelector, descriptionText
+       * @param labelLink - Object containing linkSelector, linkHref
+       * @param price - Object containing priceSelector, priceText
+       * @param button - Object containing buttonSelector, buttonText
+       * @param image - Object containing imgSelector, altText, srcValue
+       * @param imageLink - Object containing linkSelector, linkHref
+       * @param itemNumber - Optional index of the inventory item to check (default is 0)
+       */
+
+      checkInventoryItem(options: InventoryItem): Chainable<void>;
     }
   }
 }

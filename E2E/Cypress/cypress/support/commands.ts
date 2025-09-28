@@ -3,6 +3,8 @@ import { checkInputField, InputOptions } from "../utils/input";
 import { checkText, TextOptions } from "../utils/text";
 import { checkUrl, CustomUrlOptions } from "../utils/url";
 import { login, logout, LoginOptions, LogoutOptions } from "../utils/user";
+import { checkHeader, HeaderOptions } from "../utils/header";
+import { checkInventoryItem, InventoryItem } from "../utils/inventoryItem";
 
 Cypress.Commands.add(
   "checkButton",
@@ -32,4 +34,15 @@ Cypress.Commands.add("login", (options: LoginOptions) => {
 
 Cypress.Commands.add("logout", (options: LogoutOptions) => {
   return logout(options);
+});
+
+Cypress.Commands.add(
+  "checkHeader",
+  (selector: string, options?: HeaderOptions) => {
+    return checkHeader(selector, options);
+  }
+);
+
+Cypress.Commands.add("checkInventoryItem", (options: InventoryItem) => {
+  return checkInventoryItem(options);
 });

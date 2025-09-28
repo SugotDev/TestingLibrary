@@ -34,7 +34,7 @@ describe("Check main page for multiple users", () => {
       });
     });
   });
-  it.only("logs in as each user and checks product cards", () => {
+  it("logs in as each user and checks product cards", () => {
     // bug with problem_user - images are all the same
     // bug with visual_user - wrong images for items
     const inventoryItem: InventoryItem = {

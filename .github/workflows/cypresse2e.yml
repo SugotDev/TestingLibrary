@@ -8,9 +8,9 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     defaults:
-          run:
-            working-directory: E2E/Cypress
-            
+      run:
+        working-directory: E2E/Cypress
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
           node-version: 22
           cache: yarn
           cache-dependency-path: E2E/Cypress/yarn.lock
-          
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
@@ -33,11 +33,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
-          path: cypress/videos
+          path: E2E/Cypress/cypress/videos
 
       - name: Upload Cypress screenshots
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: E2E/Cypress/cypress/screenshots

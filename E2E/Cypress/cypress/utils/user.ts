@@ -9,7 +9,17 @@ export interface LogoutOptions {
   buttonSelector: string;
   assertSuccess?: boolean;
 }
+export interface User {
+  type: string;
+  username: string;
+  password: string;
+}
 
+export function getUser(users: User[], type: string): LoginOptions {
+  const user = users.find((u) => u.type === type);
+  if (!user) throw new Error(`User type ${type} not found`);
+  return user as LoginOptions;
+}
 export const login = (options: LoginOptions) => {
   const { username, password, assertSuccess = true } = options;
 

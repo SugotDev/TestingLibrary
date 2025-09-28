@@ -1,7 +1,10 @@
-import { LoginOptions } from "../../utils/user";
+import { getUser, LoginOptions } from "../../utils/user";
+import type { User } from "../../utils/user";
+
+let users: User[];
 
 beforeEach(() => {
-  cy.visit("/");
+  users = Cypress.env("users");
 });
 
 afterEach(() => {
@@ -15,29 +18,27 @@ afterEach(() => {
 
 describe("Login/Logout functionality for multiple users", () => {
   it("logs in and logs out a standard user successfully", () => {
-    const standardUser = Cypress.env("standard_user") as LoginOptions;
-    cy.login({ ...standardUser });
+    const standardUser = getUser(users, "standard_user");
+    cy.login(standardUser);
   });
   it("logs in and logs out a problem user successfully", () => {
-    const problemUser = Cypress.env("problem_user") as LoginOptions;
-    cy.login({ ...problemUser });
+    const problemUser = getUser(users, "problem_user");
+    cy.login(problemUser);
   });
   it("logs in and logs out a visual user successfully", () => {
-    const visualUser = Cypress.env("visual_user") as LoginOptions;
-    cy.login({ ...visualUser });
+    const visualUser = getUser(users, "visual_user");
+    cy.login(visualUser);
   });
   it("logs in and logs out a performance glitch user successfully", () => {
-    const performanceGlitchUser = Cypress.env(
-      "performance_glitch_user"
-    ) as LoginOptions;
-    cy.login({ ...performanceGlitchUser });
+    const performanceGlitchUser = getUser(users, "performance_glitch_user");
+    cy.login(performanceGlitchUser);
   });
   it("logs in and logs out a error user", () => {
-    const errorUser = Cypress.env("error_user") as LoginOptions;
-    cy.login({ ...errorUser });
+    const errorUser = getUser(users, "error_user");
+    cy.login(errorUser);
   });
   it("fail logs in a locked out user", () => {
-    const lockedOutUser = Cypress.env("locked_out_user") as LoginOptions;
+    const lockedOutUser = getUser(users, "locked_out_user");
     cy.login({ ...lockedOutUser, assertSuccess: false });
   });
 });

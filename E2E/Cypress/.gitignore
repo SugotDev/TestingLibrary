@@ -1,3 +1,5 @@
 # Ignore artifacts
-E2E/Cypress/videos
-E2E/Cypress/screenshots
+E2E/Cypress/cypress/videos/
+E2E/Cypress/cypress/screenshots/
+
+E2E/Cypress/cypress/utils/

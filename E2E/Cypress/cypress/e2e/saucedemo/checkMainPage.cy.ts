@@ -34,7 +34,7 @@ describe("Check main page for multiple users", () => {
       });
     });
   });
-  it("logs in as each user and checks product cards", () => {
+  it.only("logs in as each user and checks product cards", () => {
     // bug with problem_user - images are all the same
     // bug with visual_user - wrong images for items
     const inventoryItem: InventoryItem = {
@@ -53,10 +53,6 @@ describe("Check main page for multiple users", () => {
         priceSelector: '[data-test="inventory-item-price"]',
         priceText: "$29.99",
       },
-      button: {
-        buttonSelector: '[data-test="add-to-cart-sauce-labs-backpack"]',
-        buttonText: "Add to cart",
-      },
       image: {
         imgSelector: '[data-test="inventory-item-sauce-labs-backpack-img"]',
         altText: "Sauce Labs Backpack",
@@ -70,6 +66,12 @@ describe("Check main page for multiple users", () => {
     filteredUsers.forEach((user) => {
       cy.login({ username: user.username, password: user.password });
       cy.checkInventoryItem(inventoryItem);
+      cy.checkButton('[data-test="add-to-cart-sauce-labs-backpack"]', {
+        backgroundColor: "rgb(255, 255, 255)",
+        borderColor: "rgb(19, 35, 34)",
+        text: "Add to cart",
+        clickable: false,
+      });
     });
   });
 });

@@ -1,17 +1,10 @@
-import { eq } from "cypress/types/lodash";
-
 export interface InventoryItem {
   label: InventoryItemLabelOptions;
   labelLink: InventoryItemLinkOptions;
   price: InventoryItemPriceOptions;
-  button: InventoryItemButtonOptions;
   image: InventoryItemImageOptions;
   imageLink: InventoryItemLinkOptions;
   itemNumber?: number;
-}
-export interface InventoryItemButtonOptions {
-  buttonSelector: string;
-  buttonText: string;
 }
 export interface InventoryItemPriceOptions {
   priceSelector: string;
@@ -38,7 +31,6 @@ export const checkInventoryItem = (options: InventoryItem) => {
     label: { titleSelector, titleText, descriptionSelector, descriptionText },
     labelLink: { linkSelector: labelLinkSelector, linkHref: labelLinkHref },
     price: { priceSelector, priceText },
-    button: { buttonSelector, buttonText },
     image: { imgSelector, altText, srcValue },
     imageLink: { linkSelector: imgLinkSelector, linkHref: imgLinkHref },
     itemNumber = 0,
@@ -55,9 +47,6 @@ export const checkInventoryItem = (options: InventoryItem) => {
         .should("be.visible")
         .should("have.attr", "href", labelLinkHref);
       cy.get(priceSelector).should("be.visible").should("have.text", priceText);
-      cy.get(buttonSelector)
-        .should("be.visible")
-        .should("have.text", buttonText);
       cy.get(imgSelector)
         .should("be.visible")
         .should("have.attr", "alt", altText)

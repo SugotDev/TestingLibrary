@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open": "cypress open --config baseUrl=https://www.saucedemo.com/",
-    "cy:run": "cypress run --config baseUrl=https://www.saucedemo.com/"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "keywords": [],
   "author": "Michał Sługocki",

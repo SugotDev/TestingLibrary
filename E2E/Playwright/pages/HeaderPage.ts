@@ -13,9 +13,9 @@ export class HeaderPage {
   readonly page: Page;
   readonly header: Locator;
 
-  constructor(page: Page) {
+  constructor(page: Page, selector: string = "header") {
     this.page = page;
-    this.header = page.locator("header");
+    this.header = page.locator(selector);
   }
 
   async checkHeader(options?: HeaderOptions) {

@@ -21,7 +21,6 @@ test.describe("Successful logins", () => {
       const customUrl = new CustomUrl(page);
       const user = getUser(userList.users, type);
 
-      // await loginPage.goto();
       await loginPage.login(user);
       await customUrl.checkUrl({ shouldContain: /inventory.html/ });
     });

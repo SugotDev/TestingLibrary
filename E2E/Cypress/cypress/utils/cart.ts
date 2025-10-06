@@ -4,7 +4,7 @@ import {
   InventoryItemPriceOptions,
 } from "./inventoryItem";
 
-export interface CartItem {
+export interface CartItemOptions {
   quantitySelector: string;
   quantity: number;
   label: InventoryItemLabelOptions;
@@ -13,7 +13,7 @@ export interface CartItem {
   itemNumber?: number;
 }
 
-export const checkCartItem = (options: CartItem) => {
+export const checkCartItem = (options: CartItemOptions) => {
   const {
     quantitySelector,
     quantity,

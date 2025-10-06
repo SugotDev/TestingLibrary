@@ -1,0 +1,17 @@
+{
+  "name": "Playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.2"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:ui": "npx playwright test --ui"
+  }
+}

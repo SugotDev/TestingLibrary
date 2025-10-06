@@ -1,7 +1,7 @@
 import { checkButton, ButtonOptions } from "../utils/button";
 import { checkInputField, InputOptions } from "../utils/input";
 import { checkText, TextOptions } from "../utils/text";
-import { checkUrl, CustomUrlOptions } from "../utils/url";
+import { checkUrl, CustomUrlOptions } from "../utils/customUrl";
 import { login, logout, LoginOptions, LogoutOptions } from "../utils/user";
 import { checkHeader, HeaderOptions } from "../utils/header";
 import { checkInventoryItem, InventoryItem } from "../utils/inventoryItem";

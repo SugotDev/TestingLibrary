@@ -1,4 +1,4 @@
-import { getUser, LoginOptions } from "../../utils/user";
+import { getUser } from "../../utils/user";
 import type { User } from "../../utils/user";
 
 let users: User[];

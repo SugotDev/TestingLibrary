@@ -1,7 +1,13 @@
-# System & dependencies
+#Cypress
 E2E/Cypress/node_modules/
 *.log
-
-# Ignore artifacts
 E2E/Cypress/cypress/videos/
 E2E/Cypress/cypress/screenshots/
+
+# Playwright
+E2E/Playwright/node_modules/
+E2E/Playwright/test-results/
+E2E/Playwright/playwright-report/
+E2E/Playwright/blob-report/
+E2E/Playwright/playwright/.cache/
+E2E/Playwright/playwright/.auth/

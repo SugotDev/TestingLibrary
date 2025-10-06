@@ -3,7 +3,7 @@
 import { CheckButtonOptions } from "../utils/button";
 import { InputOptions } from "../utils/input";
 import { TextOptions } from "../utils/text";
-import { CustomUrlOptions } from "../utils/url";
+import { CustomUrlOptions } from "../utils/customUrl";
 import { LoginOptions, LogoutOptions } from "../utils/user";
 import { HeaderOptions } from "../utils/header";
 import { InventoryItem } from "../utils/inventoryItem";

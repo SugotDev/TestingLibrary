@@ -10,8 +10,6 @@ export default defineConfig({
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
     chromeWebSecurity: false,
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    setupNodeEvents(on, config) {},
   },
 });

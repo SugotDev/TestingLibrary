@@ -29,7 +29,7 @@ jobs:
         run: yarn playwright install --with-deps
 
       - name: Run Playwright tests
-        run: yarn playwright test
+        run: yarn playwright test --headless
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

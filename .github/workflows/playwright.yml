@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: lts/*
           cache: yarn
-          cache-dependency-path: E2E/Cypress/yarn.lock
+          cache-dependency-path: E2E/Playwright/yarn.lock
 
       - name: Install dependencies
         run: npm install -g yarn && yarn

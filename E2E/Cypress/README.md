@@ -24,20 +24,20 @@ The main focus is on E2E tests implemented in Cypress for the demo application [
 
 ## Running Tests
 
-- Interactive mode (GUI):
+```bash
+# Install dependencies
+yarn install
 
-  ```bash
-  yarn cy:open
-  # or
-  npx cypress open
-  ```
+# Run tests with UI
+yarn cy:open
+# or
+npx cypress open
 
-- Headless mode:
-  ```bash
-  yarn cy:run
-  # or
-  npx cypress run
-  ```
+# Run all tests
+yarn cy:run
+# or
+npx cypress run
+```
 
 ## Test Structure
 
@@ -51,6 +51,23 @@ The main focus is on E2E tests implemented in Cypress for the demo application [
 ## Example Test
 
 ```typescript
+import { getUser } from "../../utils/user";
+import type { User } from "../../utils/user";
+
+let users: User[];
+
+beforeEach(() => {
+  users = Cypress.env("users");
+});
+
+afterEach(() => {
+  if (Cypress.currentTest.title !== "fail logs in a locked out user") {
+    cy.logout({
+      menuSelector: "#react-burger-menu-btn",
+      buttonSelector: "#logout_sidebar_link",
+    });
+  }
+});
 it("logs in and logs out a standard user successfully", () => {
   const standardUser = getUser(users, "standard_user");
   cy.login(standardUser);

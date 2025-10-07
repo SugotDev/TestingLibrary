@@ -42,9 +42,9 @@ describe("Check add to cart functionality for standard user", () => {
       itemNumber: 0,
     });
     cy.checkButton('[data-test="remove-sauce-labs-backpack"]', {
-      backgroundColour: "rgb(255, 255, 255)",
-      borderColour: "rgb(226, 35, 26)",
-      textColour: "rgb(226, 35, 26)",
+      backgroundColor: "rgb(255, 255, 255)",
+      borderColor: "rgb(226, 35, 26)",
+      text: "Remove",
       clickable: false,
     });
     cy.checkCartItem({
@@ -68,9 +68,9 @@ describe("Check add to cart functionality for standard user", () => {
       itemNumber: 1,
     });
     cy.checkButton('[data-test="remove-sauce-labs-bike-light"]', {
-      backgroundColour: "rgb(255, 255, 255)",
-      borderColour: "rgb(226, 35, 26)",
-      textColour: "rgb(226, 35, 26)",
+      backgroundColor: "rgb(255, 255, 255)",
+      borderColor: "rgb(226, 35, 26)",
+      text: "Remove",
       clickable: false,
     });
   });

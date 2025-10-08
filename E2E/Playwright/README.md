@@ -82,7 +82,3 @@ test("logs in and logs out a standard user successfully", async ({ page }) => {
 ## Contact
 
 For questions or suggestions, please contact the repository author.
-
-```
-
-```

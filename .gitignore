@@ -3,6 +3,7 @@ E2E/Cypress/node_modules/
 *.log
 E2E/Cypress/cypress/videos/
 E2E/Cypress/cypress/screenshots/
+API/Cypress/node_modules
 
 # Playwright
 E2E/Playwright/node_modules/

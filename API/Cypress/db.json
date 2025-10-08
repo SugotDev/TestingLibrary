@@ -1,0 +1,49 @@
+{
+  "pets": [
+    {
+      "id": "1",
+      "category": {
+        "id": 1,
+        "name": "dog"
+      },
+      "name": "Rex",
+      "photoUrls": [
+        "https://example.com/photos/rex1.jpg",
+        "https://example.com/photos/rex2.jpg"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "friendly"
+        },
+        {
+          "id": 2,
+          "name": "trained"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": "2",
+      "category": {
+        "id": 2,
+        "name": "cat"
+      },
+      "name": "Garfield",
+      "photoUrls": [
+        "https://example.com/photos/garfield1.jpg"
+      ],
+      "tags": [
+        {
+          "id": 3,
+          "name": "lazy"
+        },
+        {
+          "id": 4,
+          "name": "funny"
+        }
+      ],
+      "status": "available"
+    }
+  ]
+}

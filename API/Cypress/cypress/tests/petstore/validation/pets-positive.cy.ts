@@ -34,16 +34,27 @@ describe("POSITIVE - API Validation: /pets", () => {
       method: "GET",
       url: endpointName,
     }).then((response) => {
+      expect(response.status).to.eq(200);
       expect(response.body).length.gt(0);
     });
   });
 
-  it("GET /pets - should return one pet", () => {
+  it("GET /pets/:id - should return one pet", () => {
     cy.api({
       method: "GET",
       url: `${endpointName}/${1}`,
     }).then((response) => {
+      expect(response.status).to.eq(200);
       expect(response.body).to.have.property("id", pets.rex.id);
+    });
+  });
+
+  it("DELETE /pets/:id - should return one pet", () => {
+    cy.api({
+      method: "DELETE",
+      url: `${endpointName}/${1}`,
+    }).then((response) => {
+      expect(response.status).to.eq(200);
     });
   });
 });

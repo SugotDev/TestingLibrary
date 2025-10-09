@@ -6,6 +6,7 @@ beforeEach(() => {
 
 describe("NEGATIVE - API Validation: /pets", () => {
   const endpointName = "/pets";
+  const nonExistingId = 123;
 
   it("POST /pets - should return 400 when body is missing", () => {
     cy.api({
@@ -94,9 +95,19 @@ describe("NEGATIVE - API Validation: /pets", () => {
   });
 
   it("GET /pets/:id - should return 404 for non-existent ID", () => {
-    const nonExistingId = 123;
     cy.api({
       method: "GET",
+      url: `${endpointName}/${nonExistingId}`,
+      failOnStatusCode: false,
+    }).then((response) => {
+      expect(response.status).to.eq(404);
+      expect(response.statusText).to.eq("Not Found");
+    });
+  });
+
+  it("DELETE /pets/:id - should return 404 for non-existent ID ", () => {
+    cy.api({
+      method: "DELETE",
       url: `${endpointName}/${nonExistingId}`,
       failOnStatusCode: false,
     }).then((response) => {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharp-NUnit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+581b2efcca6b435d3d87fe01bcf1200f77b248d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d95a85e3d5a1c4d75360e65226c553ee22e29a9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharp-NUnit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharp-NUnit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

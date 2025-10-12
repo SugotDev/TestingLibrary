@@ -1,3 +1,6 @@
+# CSarp
+.vs
+
 #Cypress
 E2E/Cypress/node_modules/
 *.log

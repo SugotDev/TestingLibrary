@@ -15,3 +15,7 @@ E2E/Playwright/playwright-report/
 E2E/Playwright/blob-report/
 E2E/Playwright/playwright/.cache/
 E2E/Playwright/playwright/.auth/
+
+# Postman
+API/Postman/node_modules
+API/Postman/newman
